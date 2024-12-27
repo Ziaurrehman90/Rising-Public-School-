@@ -1,1 +1,1 @@
-# Rising-Public-School-
+# Rising-Public-School

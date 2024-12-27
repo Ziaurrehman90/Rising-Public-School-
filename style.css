@@ -1,0 +1,1360 @@
+/* style.css */
+
+/* Reset some default styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; /* Remove underline from links */
+    /* overflow-x: hidden; */
+
+
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* margin: 0; */
+    padding-top: 100px; 
+    /* overflow-x: hidden; */
+}
+
+/* Navbar Styling */
+.navbar {
+    /* max-width: 100vw; */
+    width: 100vw;
+    background: linear-gradient(135deg, #0d3b66, #03a9f4); /* Navy blue to Aqua gradient */
+    padding: 15px 30px;
+    position: fixed; /* Fixed navbar */
+    top: 0; /* Stick to the top */
+    z-index: 999; /* Stay on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Container */
+.navbar-container {
+    max-width: 100vw;
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* School Logo and Name */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.school-name {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 10px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Equal gap between links */
+    overflow-x: hidden;
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Hover Animation for Links */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #facc15; /* Golden underline on hover */
+    left: 50%;
+    bottom: -5px;
+    transition: all 0.4s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links li a:hover {
+    color: #facc15; /* Golden text on hover */
+}
+
+
+/* Scrolling Admission Message Container */
+.scrolling-message-container {
+    width: 100%;
+    background-color: #facc15; 
+    color: red; /* Navy blue text */
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Scrolling Admission Message */
+.scrolling-message {
+    width: 80%; /* Width to ensure message fits inside the container */
+    text-align: center;
+    position: relative;
+}
+
+.scrolling-message span {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 50px;
+    animation: bounceMessage 6s ease-in-out infinite;
+}
+
+/* Keyframes for bouncing animation */
+@keyframes bounceMessage {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(20%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+
+/* Hamburger Icon for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #0d3b66;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Active Menu */
+    .nav-active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+/* Fix layout inconsistencies */
+* {
+    box-sizing: border-box;
+}
+
+/* WebKit-specific fix for Chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /* Add any specific CSS tweaks for Chrome here */
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+
+/* Slider Styling */
+.image-slider {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    align-items: center; /* Ensures proper vertical alignment of content */
+    justify-content: center; /* Centers content horizontally */
+}
+
+.slider-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.6s ease-in-out;
+    position: relative; /* Ensures proper positioning for child elements */
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex; /* Align content inside slides */
+    align-items: center; /* Center image vertically */
+    justify-content: center; /* Center image horizontally */
+    background-color: #000; /* Default background to avoid white flash */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images fill the slides without distortion */
+    display: block; /* Avoids inline spacing issues */
+}
+
+/* Left and Right Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+    user-select: none;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+} */
+
+/* Indicator Dots */
+.indicator-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.active-dot {
+    background-color: #717171;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .image-slider {
+        height: 60vh;
+    }
+
+    .prev, .next {
+        font-size: 1.5em;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-slider {
+        height: 50vh;
+    }
+
+    .prev, .next {
+        font-size: 1.2em;
+    }
+
+    .dot {
+        height: 8px;
+        width: 8px;
+    }
+}
+
+
+
+/* Full-page container for the images */
+/* .c1 {
+    width: 100%;
+    height: 100vh;
+} */
+
+
+
+/* School Overview Section Styling */
+.overview-section {
+    padding: 100px 30px;
+    background-color: #f4f4f9; /* Soft light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overview-container {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Overview Text */
+.overview-text {
+    flex: 1;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.overview-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #0d3b66; /* Navy Blue */
+}
+
+.overview-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #03a9f4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #0d3b66; /* Darker navy on hover */
+}
+
+/* Overview Image */
+.overview-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overview-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.overview-image img:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .overview-container {
+        flex-direction: column;
+    }
+
+    .overview-text h2 {
+        font-size: 2em;
+    }
+
+    .overview-image img {
+        max-width: 100%;
+    }
+}
+
+/* Vision and Mission Section Styling */
+.vision-mission-section {
+    padding: 100px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensure equal height for both sections */
+    background-color: #e9f5fb; /* Fallback color */
+}
+
+/* Container */
+.vision-mission-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Align items to stretch to equal height */
+    gap: 30px; /* Maintain space between Vision and Mission sections */
+}
+
+/* Vision and Mission Columns */
+.vision,
+.mission {
+    flex: 1; /* Each section takes equal width */
+    padding: 30px;
+    border-radius: 15px; /* Curvy borders */
+    position: relative; /* For pseudo-elements */
+    overflow: hidden; /* To hide overflow */
+    display: flex;
+    flex-direction: column; /* Make sure content stacks vertically */
+    justify-content: space-between; /* Space out content within each section */
+}
+
+/* Vision Section */
+.vision {
+    background: linear-gradient(135deg, #81c3d7, #3e8e91); /* Gradient background for Vision */
+    color: white;
+}
+
+/* Mission Section */
+.mission {
+    background: linear-gradient(135deg, #ff7e67, #ff4d00); /* Gradient background for Mission */
+    color: white;
+}
+
+/* Headings */
+.vision h2,
+.mission h2 {
+    font-size: 2.5em; /* Increase heading size */
+    margin-bottom: 20px; /* Gap between heading and text */
+    position: relative;
+    text-align: center;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Pacifico', cursive; /* Fancy font for the headings */
+    letter-spacing: 2px;
+    color: #facc15; /* Set text color to golden */
+}
+
+/* Add special symbols before and after heading */
+.vision h2::before, .mission h2::before {
+    content: "✧ ";
+    color: #f39c12;
+    font-size: 0.8em;
+}
+
+.vision h2::after, .mission h2::after {
+    content: " ✧";
+    color: #f39c12;
+    font-size: 0.8em;
+}
+
+/* Underline beneath headings */
+.vision h2::after,
+.mission h2::after {
+    display: block;
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #facc15; /* Golden color underline */
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* Hover effect for heading */
+.vision h2:hover,
+.mission h2:hover {
+    color: #f39c12; /* Change text color on hover */
+    transform: scale(1.1); /* Slight scaling effect */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Animation for Headings */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vision h2,
+.mission h2 {
+    animation: slideIn 0.5s ease forwards; /* Animation on heading */
+    opacity: 0; /* Start hidden */
+    transform: translateY(-20px); /* Move up for animation */
+}
+
+/* Text Styling */
+.vision p,
+.mission p {
+    font-size: 1.2em; /* Adjust font size for better readability */
+    line-height: 1.5; /* Space between lines */
+    margin-top: 20px; /* Gap above text */
+    opacity: 0; /* Start hidden */
+    transform: translateY(10px); /* Move down for animation */
+    animation: fadeIn 0.5s ease forwards; /* Animation for text */
+}
+
+/* Animation for Text */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .vision-mission-container {
+        flex-direction: column;
+    }
+
+    .vision, .mission {
+        margin-bottom: 20px; /* Spacing between sections */
+    }
+}
+
+
+/* Manager's Message Section */
+.manager-message-section {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #f0f4ff, #e0e9ff); /* Light blue gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.message-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px; /* Space between text and photo */
+}
+
+/* Message Text */
+.message-text {
+    flex: 1; /* Takes up half of the container */
+    background: linear-gradient(135deg, #81c3d7, #3e8e91); /* Gradient background for message */
+    color: white;
+    padding: 40px;
+    border-radius: 15px; /* Curvy border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Hide any overflow */
+}
+
+.message-text h2 {
+    font-size: 2.5em;
+    font-family: 'Pacifico', cursive; /* Fancy font */
+    margin-bottom: 20px;
+    color: #facc15; /* Golden color */
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.message-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.message-text span {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Manager's Photograph */
+.message-photo {
+    flex: 1; /* Takes up half of the container */
+}
+
+.message-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Hover effect on the message box */
+.message-text:hover {
+    transform: scale(1.02); /* Slight scaling effect on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .message-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message-text, .message-photo {
+        width: 100%;
+    }
+
+    .message-photo {
+        margin-top: 20px;
+    }
+}
+ 
+/* Common Styles for Both Sections */
+section {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #fdfcfb, #e2d1f3); /* Soft gradient for elegance */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Manager's Message Section */
+.manager-message-section {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #e0f7fa, #80deea, #26c6da); /* Soft blue gradient */
+    display: flex;
+    justify-content: center;     
+    align-items: center;
+}
+
+/* Container */
+.message-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px; /* Space between text and photo */
+}
+
+/* Message Text */
+.message-text {
+    flex: 1; /* Takes up half of the container */
+    background: linear-gradient(135deg, #4db6e1, #007c91); /* Gradient background for message */
+    color: white;
+    padding: 40px;
+    border-radius: 15px; /* Curvy border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Hide any overflow */
+}
+
+.message-text h2 {
+    font-size: 2.5em;
+    font-family: 'Pacifico', cursive; /* Fancy font */
+    margin-bottom: 20px;
+    color: #facc15; /* Golden color */
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.message-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.message-text span {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Manager's Photograph */
+.message-photo {
+    flex: 1; /* Takes up half of the container */
+}
+
+.message-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Hover effect on the message box */
+.message-text:hover {
+    transform: scale(1.02); /* Slight scaling effect on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .message-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message-text, .message-photo {
+        width: 100%;
+    }
+
+    .message-photo {
+        margin-top: 20px;
+    }
+}
+
+/* Director's Message Section */
+.director-message-section {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #fff7e6, #ffcc80); /* Light orange gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.director-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px; /* Space between text and photo */
+}
+
+/* Message Text */
+.director-text {
+    flex: 1; /* Takes up half of the container */
+    background: linear-gradient(135deg, #ffa726, #ff7043); /* Gradient background for message */
+    color: white;
+    padding: 40px;
+    border-radius: 15px; /* Curvy border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Hide any overflow */
+}
+
+.director-text h2 {
+    font-size: 2.5em;
+    font-family: 'Pacifico', cursive; /* Fancy font */
+    margin-bottom: 20px;
+    color: #facc15; /* Golden color */
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.director-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.director-text span {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Director's Photograph */
+.director-photo {
+    flex: 1; /* Takes up half of the container */
+}
+
+.director-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Hover effect on the message box */
+.director-text:hover {
+    transform: scale(1.02); /* Slight scaling effect on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .director-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .director-text, .director-photo {
+        width: 100%;
+    }
+
+    .director-photo {
+        margin-top: 20px;
+    }
+}
+
+
+/* President's Message Section */
+.president-message-section {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #f0f4c3, #b2dfdb); /* Light lime green to teal gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.president-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px; /* Space between text and photo */
+}
+
+/* Message Text */
+.president-text {
+    flex: 1; /* Takes up half of the container */
+    background: linear-gradient(135deg, #8e24aa, #3949ab); /* Purple to royal blue gradient */
+    color: white;
+    padding: 40px;
+    border-radius: 15px; /* Curvy border */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden; /* Hide any overflow */
+}
+
+.president-text h2 {
+    font-size: 2.8em;
+    font-family: 'Dancing Script', cursive; /* Elegant font */
+    margin-bottom: 20px;
+    color: #ffeb3b; /* Bright yellow */
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.president-text p {
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.president-text span {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #ffe082; /* Soft golden yellow */
+}
+
+/* President's Photograph */
+.president-photo {
+    flex: 1; /* Takes up half of the container */
+}
+
+.president-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+/* Hover effect on the message box */
+.president-text:hover {
+    transform: scale(1.05); /* Slight scaling effect on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .president-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .president-text, .president-photo {
+        width: 100%;
+    }
+
+    .president-photo {
+        margin-top: 20px;
+    }
+}
+
+
+/* Principal's Message Section */
+.principal-message-section {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #e0ffe0, #b3ffb3); /* Light green gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.principal-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px; /* Space between text and photo */
+}
+
+/* Message Text */
+.principal-text {
+    flex: 1; /* Takes up half of the container */
+    background: linear-gradient(135deg, #4caf50, #388e3c); /* Gradient background for message */
+    color: white;
+    padding: 40px;
+    border-radius: 15px; /* Curvy border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Hide any overflow */
+}
+
+.principal-text h2 {
+    font-size: 2.5em;
+    font-family: 'Pacifico', cursive; /* Fancy font */
+    margin-bottom: 20px;
+    color: #facc15; /* Golden color */
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.principal-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.principal-text span {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Principal's Photograph */
+.principal-photo {
+    flex: 1; /* Takes up half of the container */
+}
+
+.principal-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Hover effect on the message box */
+.principal-text:hover {
+    transform: scale(1.02); /* Slight scaling effect on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .principal-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .principal-text, .principal-photo {
+        width: 100%;
+    }
+
+    .principal-photo {
+        margin-top: 20px;
+    }
+
+
+    /* footer section */
+}
+.footer-section {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 100px 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Heading Styles */
+.contact-heading, .form-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #3e8e91;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.contact-heading::after, .form-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 60px;
+    height: 3px;
+    background: #3e8e91;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+/* Info Items with Icons */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #3e8e91;
+    margin-right: 15px;
+}
+
+.info-item a {
+    text-decoration: none;
+    color: #3e8e91;
+    transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: #006d77;
+}
+
+/* Contact Form */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(62, 142, 145, 0.1);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #333;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    background: rgba(62, 142, 145, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+input:focus + label, textarea:focus + label {
+    top: -20px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: #3e8e91;
+}
+
+.send-btn {
+    width: 100%;
+    padding: 15px;
+    background: #3e8e91;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #006d77;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+    }
+}
+
+/* Map Container */
+.map-container {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+    }
+}
+/* Main Footer Styling */
+.main-footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Social Media Links */
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media {
+        margin-top: 10px;
+    }
+}
+
+
+/* Affiliations Section Styling */
+.affiliations-section {
+    padding: 60px 30px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Light gradient background */
+    text-align: center;
+}
+
+.affiliations-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.affiliations-content h2 {
+    font-size: 2.5em;
+    color: #2c3e50; /* Darker text color */
+    margin-bottom: 20px;
+}
+
+.affiliations-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #34495e; /* Slightly lighter text color */
+}
+.up-board-logo {
+    max-width: 150px; /* Adjust the size as needed */
+    margin: 20px 0; /* Space around the logo */
+}
+/* hovering navlinks  */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li {
+    display: inline-block; /* Change from inline to inline-block for proper positioning */
+    margin: 0 15px;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li .dropdown {
+    /* display: hidden; Hide dropdown by default */
+    display: none;
+    position: absolute; /* Position dropdown relative to the parent */
+    top: 100%; /* Aligns dropdown just below the parent item */
+    left: 0; /* Aligns dropdown to the left */
+    background: #3E8E91; /* Same color as the nav bar */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensures dropdown is on top */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown li {
+    display: block; /* Stack dropdown items vertically */
+    margin: 0; /* No margin for dropdown items */
+}
+
+.dropdown li a {
+    color: white; /* Text color for dropdown items */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for dropdown items */
+    display: block; /* Make entire area clickable */
+}
+
+.dropdown li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Hover effect */
+}
+
+
+ 

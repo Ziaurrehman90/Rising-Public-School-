@@ -1,0 +1,877 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; /* Remove underline from links */
+}
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* margin: 0; */
+    padding-top: 100px; /* Ensure content doesn't overlap with fixed navbar */
+    /* overflow-x: hidden; */
+}
+
+/* header */
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    /* max-width: 100vw; */
+    background: linear-gradient(135deg, #0d3b66, #03a9f4); /* Navy blue to Aqua gradient */
+    padding: 15px 30px;
+    position: fixed; /* Fixed navbar */
+    top: 0; /* Stick to the top */
+    z-index: 999; /* Stay on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Container */
+.navbar-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* School Logo and Name */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.school-name {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 10px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Equal gap between links */
+    overflow-x: hidden;
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Hover Animation for Links */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #facc15; /* Golden underline on hover */
+    left: 50%;
+    bottom: -5px;
+    transition: all 0.4s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links li a:hover {
+    color: #facc15; /* Golden text on hover */
+}
+
+/* Hamburger Icon for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #0d3b66;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+    /* * {
+        max-width: 100vw;
+        overflow-x: hidden;
+    } */
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Active Menu */
+    .nav-active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li {
+    display: inline-block; /* Change from inline to inline-block for proper positioning */
+    margin: 0 15px;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li .dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown relative to the parent */
+    top: 100%; /* Aligns dropdown just below the parent item */
+    left: 0; /* Aligns dropdown to the left */
+    background: #3E8E91; /* Same color as the nav bar */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensures dropdown is on top */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown li {
+    display: block; /* Stack dropdown items vertically */
+    margin: 0; /* No margin for dropdown items */
+}
+
+.dropdown li a {
+    color: white; /* Text color for dropdown items */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for dropdown items */
+    display: block; /* Make entire area clickable */
+}
+
+.dropdown li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Hover effect */
+}
+
+/* footer  */
+.footer-section {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 100px 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Heading Styles */
+.contact-heading, .form-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #3e8e91;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.contact-heading::after, .form-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 60px;
+    height: 3px;
+    background: #3e8e91;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+/* Info Items with Icons */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #3e8e91;
+    margin-right: 15px;
+}
+
+.info-item a {
+    text-decoration: none;
+    color: #3e8e91;
+    transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: #006d77;
+}
+
+/* Contact Form */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(62, 142, 145, 0.1);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #333;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    background: rgba(62, 142, 145, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+input:focus + label, textarea:focus + label {
+    top: -20px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: #3e8e91;
+}
+
+.send-btn {
+    width: 100%;
+    padding: 15px;
+    background: #3e8e91;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #006d77;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+    }
+}
+
+/* Map Container */
+.map-container {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+    }
+}
+/* Main Footer Styling */
+.main-footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Social Media Links */
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media {
+        margin-top: 10px;
+    }
+}
+  
+
+/* hovering navlinks  */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li {
+    display: inline-block; /* Change from inline to inline-block for proper positioning */
+    margin: 0 15px;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li .dropdown {
+    /* display: hidden; Hide dropdown by default */
+    display: none;
+    position: absolute; /* Position dropdown relative to the parent */
+    top: 100%; /* Aligns dropdown just below the parent item */
+    left: 0; /* Aligns dropdown to the left */
+    background: #3E8E91; /* Same color as the nav bar */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensures dropdown is on top */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown li {
+    display: block; /* Stack dropdown items vertically */
+    margin: 0; /* No margin for dropdown items */
+}
+
+.dropdown li a {
+    color: white; /* Text color for dropdown items */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for dropdown items */
+    display: block; /* Make entire area clickable */
+}
+
+.dropdown li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Hover effect */
+}
+
+
+
+/* Academics Overview Section */
+.academics-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 20px;
+    background: linear-gradient(135deg, #1e3c72 50%, #2a5298 50%);
+    border-radius: 20px;
+    margin: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+/* Content Section Styling */
+.overview-content {
+    max-width: 600px;
+    flex: 1;
+    margin: 10px;
+}
+
+/* Heading Styling */
+.overview-heading {
+    font-size: 2em;
+    color: #ffcc29;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 3px solid #ffcc29;
+    display: inline-block;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Paragraph Text */
+.overview-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: rgba(30, 44, 72, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    animation: slideIn 1.2s ease-out;
+}
+
+/* Overview Image Styling */
+.overview-image img {
+    max-width: 100%; /* Ensure the image stays within its container */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design for Mobile and Tablets */
+@media (max-width: 768px) {
+    .academics-overview {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .overview-content {
+        max-width: 100%;
+        text-align: center; /* Center-align content for mobile screens */
+    }
+
+    .overview-heading {
+        font-size: 1.8em;
+    }
+
+    .overview-text {
+        font-size: 1em;
+    }
+
+    .overview-image img {
+        max-width: 90%; /* Adjust image size for smaller screens */
+        margin-top: 20px; /* Add spacing between text and image */
+    }
+}
+
+/* Responsive Design for Very Small Screens */
+@media (max-width: 480px) {
+    .academics-overview {
+        padding: 15px;
+    }
+
+    .overview-heading {
+        font-size: 1.6em;
+    }
+
+    .overview-text {
+        font-size: 0.9em;
+    }
+
+    .overview-image img {
+        max-width: 100%; /* Make the image adapt fully for small screens */
+    }
+}
+
+
+
+
+/* Curriculum Section Styling */
+.curriculum-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+    gap: 50px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Curriculum Content Styling */
+.curriculum-content {
+    max-width: 600px;
+}
+
+.curriculum-heading {
+    font-size: 2.8em;
+    color: #0d3b66;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 4px solid #facc15;
+    display: inline-block;
+}
+
+.curriculum-description {
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #444;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* List Styling for Features */
+.curriculum-features {
+    list-style-type: disc;
+    margin-top: 15px;
+    padding-left: 20px;
+    font-size: 1.2em;
+}
+
+.curriculum-features li {
+    margin: 10px 0;
+    color: #444;
+    animation: slideInLeft 1s ease-out both;
+}
+
+/* Curriculum Image Styling */
+.curriculum-image img {
+    width: 450px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.curriculum-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .curriculum-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .curriculum-image img {
+        width: 300px;
+    }
+}
+
+/* Departments Section */
+.departments {
+    padding: 60px;
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+    text-align: center;
+  }
+  
+  .departments h2 {
+    font-size: 2.5rem;
+    color: #0d3b66;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .department-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    justify-items: center;
+  }
+  
+  .department {
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .department i {
+    font-size: 3rem;
+    color: #3e8e91;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+  }
+  
+  .department h3 {
+    font-size: 1.8rem;
+    color: #3e8e91;
+    margin-bottom: 10px;
+  }
+  
+  .department p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .department:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .department:hover i {
+    color: #facc15;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive Design */
+  
+  /* Large screens (desktop and large tablets) */
+  @media (min-width: 1024px) {
+    .department-container {
+      grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+    }
+  }
+  
+  /* Medium screens (tablets) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .department-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+  
+    .department {
+      max-width: 400px;
+    }
+  
+    .department p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* Small screens (mobile devices) */
+  @media (max-width: 767px) {
+    .department-container {
+      grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+  
+    .department {
+      padding: 20px;
+      max-width: 90%; /* Reduce width for better fit on mobile */
+    }
+  
+    .department h3 {
+      font-size: 1.5rem;
+    }
+  
+    .department p {
+      font-size: 0.95rem;
+    }
+  
+    .departments h2 {
+      font-size: 2rem;
+    }
+  }
+
+  /* Facilities Section Styling */
+#facilities {
+    padding: 60px;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  #facilities h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #0d3b66;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  /* Facility Wrapper */
+  .facility-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .facility {
+    width: 22%;
+    min-width: 250px;
+    background: #0d3b66;
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    text-align: center;
+  }
+  
+  /* Individual Facility Image */
+  .facility-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Icon Styling */
+  .facility i {
+    font-size: 2.5em;
+    color: #facc15;
+    margin-bottom: 10px;
+  }
+  
+  /* Facility Heading and Paragraph */
+  .facility h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .facility p {
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+  }
+  
+  .facility:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .facility-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .facility {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+  

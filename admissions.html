@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admissions</title>
+    <link rel="stylesheet" href="admissions.css?v=1.0">
+    <base href="admissions.html">
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0; /* Ensure no padding creates overflow */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto; /* Allow scrolling if needed */
+    display: block; /* Ensure it behaves well on small screens */
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    word-wrap: break-word; /* Handle long text properly */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.school-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.notes {
+    text-align: left;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        margin: 10px; /* Reduce margin on smaller screens */
+    }
+
+    .school-name {
+        font-size: 1.2em; /* Smaller font size for the school name */
+    }
+
+    table, th, td {
+        padding: 8px; /* Reduce padding for better fit */
+    }
+
+    th {
+        font-size: 0.9em; /* Smaller font size for table headers */
+    }
+
+    .notes {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 5px;
+    }
+
+    .school-name {
+        font-size: 1em;
+    }
+
+    /* Ensure the table is scrollable horizontally on small screens */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap; /* Prevent content wrapping */
+    }
+
+    th, td {
+        font-size: 0.8em;
+        padding: 5px; /* Further reduce padding */
+    }
+
+    th {
+        font-size: 0.8em;
+    }
+
+    .notes {
+        font-size: 0.8em;
+    }
+}
+
+   </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header id="about-us">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <!-- School Logo -->
+                <div class="logo">
+                    <img src="WhatsApp Image 2024-10-10 at 8.36.59 AM.jpeg" alt="School Logo">
+                    <span class="school-name">Rising Public School </span>
+                </div>
+                
+                <!-- Navbar Links -->
+                <ul class="nav-links">
+                    <!-- <li><a href="#">Home</a></li> -->
+                    <li><a href="index.html">About Us</a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#school-overview">Why us?</a></li>
+                            <li><a href="index.html#vision-mission">Mission & Vision</a></li>
+                            <li><a href="index.html#manager-sec">Manager's Message</a></li>
+                            <li><a href="index.html#prin-sec">Principal's Message</a></li>
+                            <li><a href="index.html#dir-sec">Director's Message</a></li>
+                            <li><a href="index.html#aff-sec">Affiliations</a></li>
+                        </ul>
+
+
+
+
+                    </li>
+                    <li><a href="admissions.html">Admissions</a>
+                        <ul class="dropdown">
+                            <li><a href="admissions.html#ad-1">Admission Overview</a></li>
+                            <li><a href="admissions.html#ad-2">Registration Form </a></li>
+                            <li><a href="admissions.html#ad-3">Fee Structure </a></li>
+                            <li><a href="admissions.html#ad-4">Code of Conduct</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="academics.html">Academics</a>
+                        <ul class="dropdown">
+                            <li><a href="academics.html#11">Overview</a></li>
+                            <li><a href="academics.html#12">Curriculum </a></li>
+                            <li><a href="academics.html#13">Departments</a></li>
+                            <li><a href="academics.html#14">Facilities</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="beyound.html">Beyond Academics</a>
+                        <ul class="dropdown">
+                            <li><a href="beyound.html#sports">Sports</a></li>
+                            <li><a href="beyound.html#4">Events </a></li>
+                            <li><a href="beyound.html#5">Gallery</a></li>
+                           
+                        </ul>
+                    </li>
+                    <!-- <li><a href="#">Facilities</a></li> -->
+                    <li><a href="index.html#footer-contact">Contact Us</a></li>
+                </ul>
+
+                <!-- Hamburger Icon for Mobile -->
+                <div class="hamburger" id="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+   
+        <section class="admission-overview" id="ad-1">
+            <div class="overview-image">
+                <img src="admission.jpeg" alt="School Overview">
+            </div>
+            <div class="overview-content">
+                <h1>Admission Overview</h1>
+                <div class="criteria">
+                    <div class="section">
+                        <h2>Age Criteria for Nursery</h2>
+                        <p>Children must be at least 3 years old by the start of the academic year to be eligible for Nursery.</p>
+                    </div>
+                    <div class="section">
+                        <h2>Academic Criteria</h2>
+                        <p>Prospective students will undergo an aptitude or entrance test, which will determine their eligibility for admission. For Classes I to IV, the tests are designed to assess the knowledge gained in the previous year, primarily in English and Math, along with an evaluation of general awareness. From Class V onwards, the assessments will cover English, Math, and Science based on the skills acquired in the preceding class.</p>
+                    </div>
+                    <div class="section">
+                        <h2>Credentials Required</h2>
+                        <p>Parents must submit the birth certificate, Transfer Certificate (If applicable), Copy of Aadhar Card,  previous school report card (if applicable), and passport-size photographs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- registratiob form  -->
+
+        <section class="registration-form" id="ad-2">
+            <h2>Registration Form</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="fatherName">Father's Name:</label>
+                    <input type="text" id="fatherName" name="fatherName" autocomplete="family-name" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" autocomplete="street-address" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" autocomplete="address-level2" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="zipcode">Zipcode:</label>
+                    <input type="text" id="zipcode" name="zipcode" autocomplete="postal-code" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                </div>
+            
+                <div class="form-group">
+                    <!-- <label for="class">Class Applying For:</label> -->
+                    <select id="class" name="class" autocomplete="off" required> 
+                        <option value="" disabled selected>Select a class</option> 
+                        <option value="Nursery">Nursery</option>
+                        <option value="LKG">LKG</option>
+                        <option value="UKG">UKG</option>
+                        <option value="1st">1st</option>
+                        <option value="2nd">2nd</option>
+                        <option value="3rd">3rd</option>
+                        <option value="4th">4th</option>
+                        <option value="5th">5th</option>
+                        <option value="6th">6th</option>
+                        <option value="7th">7th</option>
+                        <option value="8th">8th</option>
+                        <option value="9th">9th</option>
+                        <option value="10th">10th</option>
+                    </select>
+                </div>
+            
+                <button type="submit">Submit</button>
+            </form>
+            
+        </section>
+
+<!-- fee structurre  -->
+        <section class="fee-structure" id="ad-3">
+            <h2>Fee Structure</h2>
+            <div class="fee-content">
+                <p>Below is the detailed fee structure for the academic year. Please review the document carefully.</p>
+                <!-- <img src="images/WhatsApp Image 2024-10-14 at 1.02.42 PM.jpeg" alt="Fee Structure Document" class="fee-document"> -->
+             
+                <table>
+                    <!-- First row: School name -->
+                    <tr>
+                        <td colspan="6" class="school-name">Rising Public School Khurja - Fee Structure (2024-2025)</td>
+                    </tr>
+            
+                    <!-- Second row: Table headers for class and fees -->
+                    <tr>
+                        <th>Class/Month</th>
+                        <th>April - June</th>
+                        <th>July - Sept</th>
+                        <th>Oct - Dec</th>
+                        <th>Jan - Mar</th>
+                        <th>Total</th>
+                    </tr>
+            
+                    <!-- Tuition fees for Nursery to UKG -->
+                    <tr>
+                        <td>NUR - U.K.G.</td>
+                        <td>₹3000</td>
+                        <td>₹3000</td>
+                        <td>₹3000</td>
+                        <td>₹3000</td>
+                        <td>₹12000</td>
+                    </tr>
+            
+                    <!-- Tuition fees for Classes I to V -->
+                    <tr>
+                        <td>I - V</td>
+                        <td>₹3600</td>
+                        <td>₹3600</td>
+                        <td>₹3600</td>
+                        <td>₹3600</td>
+                        <td>₹14400</td>
+                    </tr>
+            
+                    <!-- Tuition fees for Classes VI to VIII -->
+                    <tr>
+                        <td>VI - VIII</td>
+                        <td>₹3900</td>
+                        <td>₹3900</td>
+                        <td>₹3900</td>
+                        <td>₹3900</td>
+                        <td>₹15600</td>
+                    </tr>
+            
+                    <!-- Discount table -->
+                    <tr>
+                        <td colspan="6" class="discount-table">
+                            <table width="100%" class="discount-table">
+                                <tr>
+                                    <th>Discount Conditions</th>
+                                    <th>Discount Offered</th>
+                                </tr>
+                                <tr>
+                                    <td>If two siblings take admission in the school</td>
+                                    <td>Second child gets 25% discount on tuition fee</td>
+                                </tr>
+                                <tr>
+                                    <td>If three siblings take admission in the school</td>
+                                    <td>Third child gets 25% discount on tuition fee</td>
+                                </tr>
+                                <tr>
+                                    <td>For any additional siblings admitted</td>
+                                    <td>Each subsequent child gets 25% discount on tuition fee</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+            
+                    <!-- Last row: Notes section -->
+                    <tr>
+                        <td colspan="6" class="notes">
+                            <ul>
+                                <li>No Admission Fee</li>
+                                <li>Registration Fee: ₹300</li>
+                                <li>Annual Fee: ₹4200</li>
+                                <li>Activity charges are not included in this fee structure.</li>
+                                <li>Transport charges are not included in this fee structure.</li>
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            
+            </div>
+        </section>
+        
+        
+
+        <section class="code-of-conduct" id="ad-4">
+            <h2>Code of Conduct</h2>
+            <div class="conduct-section">
+                <h3>For Students</h3>
+                <ul>
+                    <li>Respect your peers, teachers, and all school staff.</li>
+                    <li>Follow the school's rules and regulations.</li>
+                    <li>Maintain a positive attitude and contribute to a harmonious school environment.</li>
+                    <li>Be responsible for your own learning and actions.</li>
+                    <li>Report any incidents of bullying or misconduct immediately.</li>
+                    <li>Attend classes regularly and arrive on time.</li>
+                    <li>Take care of school property and the environment.</li>
+                </ul>
+            </div>
+            <div class="conduct-section">
+                <h3>For Parents</h3>
+                <ul>
+                    <li>Support your child's education by ensuring they attend school regularly.</li>
+                    <li>Communicate openly with teachers and school staff.</li>
+                    <li>Encourage positive behavior and respect for others.</li>
+                    <li>Be involved in school activities and support school policies.</li>
+                    <li>Ensure your child completes homework and other assignments on time.</li>
+                    <li>Respect the school's rules and cooperate with staff to create a conducive learning environment.</li>
+                    <li>Report any concerns regarding your child's behavior or academic performance.</li>
+                </ul>
+            </div>
+        </section>
+        
+    
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Contact Section -->
+<footer class="footer-section" id="footer-contact">
+    <div class="footer-container">
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2 class="contact-heading">Contact Us</h2>
+            <p>We would love to hear from you!</p>
+
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Near Agwal Railway Crossing G.T. Road <br> Khurja (U.P.) - 203131</span>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@schoolname.com"> risingpublicschoolkhurjabsr@gmail.com</a>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+1234567890"> +91 8979113919</a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+<form id="contactForm" class="contact-form">
+    <h2 class="form-heading">Send Us a Message</h2>
+
+    <div class="form-group">
+        <input type="text" name="user_name" id="name" placeholder=" " autocomplete="name" required />
+        <label for="name">Your Name</label>
+    </div>
+
+    <div class="form-group">
+        <input type="email" name="user_email" id="email" placeholder=" " autocomplete="email" required />
+        <label for="email">Your Email</label>
+    </div>
+
+    <div class="form-group">
+        <input type="tel" name="user_phone" id="phone" placeholder=" " autocomplete="tel" required />
+        <label for="phone">Your Phone Number</label>
+    </div>
+
+    <div class="form-group">
+        <textarea name="message" id="message" placeholder=" " autocomplete="on" required></textarea>
+        <label for="message">Your Message</label>
+    </div>
+
+    <button type="submit" class="send-btn">Send Message</button>
+</form>
+
+    </div>
+
+ 
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3513.4031993506223!2d77.85281042346801!3d28.286107835479424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ca8c3bb3fb3d7%3A0x80d6cf2c26a3ca28!2sRising%20Public%20School%20Khurja%20Bulandshahar%20U.P!5e0!3m2!1sen!2sus!4v1729137983000!5m2!1sen!2sus"
+        width="100%"
+         height="300"
+          style="border:0;"
+           allowfullscreen="" 
+           loading="lazy" 
+           referrerpolicy="no-referrer-when-downgrade">
+       </iframe>
+    </div>
+
+
+
+
+
+
+
+
+</footer>
+
+
+
+<!-- Footer Section -->
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Rising Public School . All rights reserved.</p>
+        <div class="social-media">
+            <!-- <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a> -->
+            <a href="https://www.facebook.com/www.risingpublicschool?mibextid=ZbWKwL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/risingpublicschool_khurja/profilecard/?igsh=MTJnYnQ3MGN1M3Nqcw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script src="adm.js"></script>
+</body>
+</html>

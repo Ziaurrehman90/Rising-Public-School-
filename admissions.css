@@ -1,0 +1,722 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; /* Remove underline from links */
+}
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* margin: 0; */
+    padding-top: 100px; /* Ensure content doesn't overlap with fixed navbar */
+    /* overflow-x: hidden; */
+}
+
+/* header */
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    /* max-width: 100vw; */
+    background: linear-gradient(135deg, #0d3b66, #03a9f4); /* Navy blue to Aqua gradient */
+    padding: 15px 30px;
+    position: fixed; /* Fixed navbar */
+    top: 0; /* Stick to the top */
+    z-index: 999; /* Stay on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Container */
+.navbar-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* School Logo and Name */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.school-name {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 10px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Equal gap between links */
+    overflow-x: hidden;
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Hover Animation for Links */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #facc15; /* Golden underline on hover */
+    left: 50%;
+    bottom: -5px;
+    transition: all 0.4s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links li a:hover {
+    color: #facc15; /* Golden text on hover */
+}
+
+/* Hamburger Icon for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #0d3b66;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+    /* * {
+        max-width: 100vw;
+        overflow-x: hidden;
+    } */
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Active Menu */
+    .nav-active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li {
+    display: inline-block; /* Change from inline to inline-block for proper positioning */
+    margin: 0 15px;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li .dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown relative to the parent */
+    top: 100%; /* Aligns dropdown just below the parent item */
+    left: 0; /* Aligns dropdown to the left */
+    background: #3E8E91; /* Same color as the nav bar */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensures dropdown is on top */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown li {
+    display: block; /* Stack dropdown items vertically */
+    margin: 0; /* No margin for dropdown items */
+}
+
+.dropdown li a {
+    color: white; /* Text color for dropdown items */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for dropdown items */
+    display: block; /* Make entire area clickable */
+}
+
+.dropdown li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Hover effect */
+}
+
+
+/* footer  */
+.footer-section {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 100px 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Heading Styles */
+.contact-heading, .form-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #3e8e91;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.contact-heading::after, .form-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 60px;
+    height: 3px;
+    background: #3e8e91;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+/* Info Items with Icons */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #3e8e91;
+    margin-right: 15px;
+}
+
+.info-item a {
+    text-decoration: none;
+    color: #3e8e91;
+    transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: #006d77;
+}
+
+/* Contact Form */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(62, 142, 145, 0.1);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #333;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    background: rgba(62, 142, 145, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+input:focus + label, textarea:focus + label {
+    top: -20px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: #3e8e91;
+}
+
+.send-btn {
+    width: 100%;
+    padding: 15px;
+    background: #3e8e91;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #006d77;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+    }
+}
+
+/* Map Container */
+.map-container {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+    }
+}
+/* Main Footer Styling */
+.main-footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Social Media Links */
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media {
+        margin-top: 10px;
+    }
+}
+  
+
+/* overview section */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Admission Overview Section */
+.admission-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+    padding: 50px;
+    height: 100vh;
+    color: white;
+    gap: 30px;
+    overflow: hidden;
+}
+
+/* Left Side: Image Styling */
+.overview-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease-in-out;
+}
+
+.overview-image img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* Right Side: Content Styling */
+.overview-content {
+    flex: 1;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.overview-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #b3c5f9; /* Use a solid color */
+    background: linear-gradient(to right, #ffffff, #b3c5f9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* This is optional for webkit-based browsers */
+    position: relative;
+}
+
+/* Criteria Section */
+.criteria .section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.criteria .section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.criteria h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #c7d2fe;
+}
+
+.criteria p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admission-overview {
+        flex-direction: column;
+        height: auto;
+        padding: 30px;
+    }
+
+    .overview-image img {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .overview-content h1 {
+        font-size: 2.5rem;
+    }
+}
+/* Registration Form Section */
+.registration-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin: 40px 0;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.registration-form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    /* padding-bottom: 5px; */
+}
+
+.form-group label {
+    padding-bottom: 10px;
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding-top: 25px;
+    /* padding-bottom: 30px; */
+    /* margin-bottom: 5px; */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-form {
+        padding: 20px;
+    }
+
+    .registration-form h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Code of Conduct Section */
+.code-of-conduct {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin: 40px 0;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.code-of-conduct h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+    text-align: center;
+}
+
+.conduct-section {
+    margin-bottom: 30px;
+}
+
+.conduct-section h3 {
+    font-size: 2rem;
+    color: #3b82f6;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.conduct-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.conduct-section li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .code-of-conduct {
+        padding: 20px;
+    }
+
+    .code-of-conduct h2 {
+        font-size: 2rem;
+    }
+
+    .conduct-section h3 {
+        font-size: 1.5rem;
+    }
+}
+  
+
+/* Fee Structure Section */
+
+
+.fee-structure h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+    text-align: center;
+}
+
+.fee-content {
+    text-align: center;
+}
+/* hovering navlinks  */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li {
+    display: inline-block; /* Change from inline to inline-block for proper positioning */
+    margin: 0 15px;
+    position: relative; /* Required for absolute positioning of dropdown */
+}
+
+nav ul li .dropdown {
+    /* display: hidden; Hide dropdown by default */
+    display: none;
+    position: absolute; /* Position dropdown relative to the parent */
+    top: 100%; /* Aligns dropdown just below the parent item */
+    left: 0; /* Aligns dropdown to the left */
+    background: #3E8E91; /* Same color as the nav bar */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensures dropdown is on top */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown li {
+    display: block; /* Stack dropdown items vertically */
+    margin: 0; /* No margin for dropdown items */
+}
+
+.dropdown li a {
+    color: white; /* Text color for dropdown items */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for dropdown items */
+    display: block; /* Make entire area clickable */
+}
+
+.dropdown li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Hover effect */
+}
+
+
